@@ -12,6 +12,7 @@ class Player:
     def single_fire_event(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1 and not self.attack and not self.game.weapon.reloading:
+                self.game.sound.swing.play()
                 self.attack = True
                 self.game.weapon.reloading = True
 
